@@ -43,4 +43,5 @@
             localStorage.setItem('calories', 0);
 
             loadData();
+
         });
