@@ -22,14 +22,14 @@ function getAdminProducts() {
   return JSON.parse(localStorage.getItem("products")) || [];
 }
 
-// السلة
+// cart
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 function saveCart() {
   localStorage.setItem("cart", JSON.stringify(cart));
   renderCart();
 }
 
-// عرض المنتجات
+//  shaw product
 const productList = document.getElementById("product-list");
 function renderProducts() {
   productList.innerHTML = "";
@@ -50,7 +50,7 @@ function renderProducts() {
   });
 }
 
-// إضافة للسلة
+// add  cart
 function addToCart(id) {
   let qty = parseInt(document.getElementById(`qty-${id}`).value);
   let all = [...baseProducts, ...getAdminProducts()];
@@ -65,7 +65,7 @@ function addToCart(id) {
   saveCart();
 }
 
-// عرض السلة في جدول
+//   shaw cart to table 
 const cartDiv = document.getElementById("cart");
 function renderCart() {
   if (!cart.length) {
@@ -120,7 +120,7 @@ function renderCart() {
   cartDiv.innerHTML = html;
 }
 
-// تحديث الكمية
+//  update qty
 function updateQty(id, val) {
   let it = cart.find(x => x.id === id);
   if (!it) return;
@@ -135,7 +135,7 @@ function removeFromCart(id) {
   cart = cart.filter(x => x.id !== id);
   saveCart();
 }
-
-// تحميل
+// reload
 renderProducts();
+
 renderCart();
