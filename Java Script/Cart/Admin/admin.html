@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة التحكم - الأدمن</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="container">
+    <h2>إدارة المنتجات</h2>
+
+<!-- From input -->
+    <input type="text" id="productName" placeholder="اسم المنتج">
+    <input type="number" id="productPrice" placeholder="السعر">
+    <input list="Category" id="productCategory" placeholder="الفئة">
+    <datalist id="Category">
+      <option value="هاتف">
+      <option value="ساعة سمارت">
+      <option value="كاميرا">
+      <option value="لوحة مفاتيح">
+      <option value="سماعة">
+      <option value="نظارة شمسية">
+      <option value="طابعة">
+    </datalist>
+    <textarea id="productDescription" placeholder="الوصف"></textarea>
+    <input type="file" id="productFile">
+    <button id="submitBtn">إضافة / تعديل المنتج</button>
+
+    <h3>قائمة المنتجات</h3>
+    <div id="adminProductsContainer"></div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
